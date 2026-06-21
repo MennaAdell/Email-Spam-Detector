@@ -32,7 +32,7 @@ The complete pipeline—from Exploratory Data Analysis (EDA) to hyperparameter t
 ### Key NLP & Data Science Pipeline:
 * **Text Cleansing:** Regex pattern matching to extract alphabetic characters and lowercasing.
 * **Stopwords Filter & Stemming:** Filtering common English stopwords and applying word normalization using NLTK's **PorterStemmer**.
-* **Feature Extraction:** Advanced text vectorization using **TF-IDF Vectorizer** (with `ngram_range=(1, 2)` and `max_features=5000`).
+* **Feature Extraction:** Advanced text vectorization using **TF-IDF Vectorizer**.
 * **Class Balancing:** Applied **SMOTE** (Synthetic Minority Over-sampling Technique) to address the text label imbalance before training, significantly boosting recall for the minority class.
 
 ---
