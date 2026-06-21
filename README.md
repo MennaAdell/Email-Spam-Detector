@@ -1,12 +1,12 @@
 # 🚨 Intelligent Email Spam Detector
 
-A high-performance, End-to-End NLP and Machine Learning system designed for rigorous email text verification. This project moves away from single-model approaches to leverage a **Voting Ensemble Architecture**, achieving top-tier accuracy and robust generalization.
+A high-performance, End-to-End NLP and Machine Learning system designed for rigorous email text verification. This project leverages a **Consensus-Based Voting Ensemble Architecture** combined with advanced class balancing techniques to achieve top-tier classification metrics.
 
 ---
 
 ## 🎬 Project Overview & UI
 
-The project features a modern, clean, and user-friendly desktop application interface built with **CustomTkinter**, ensuring a seamless user experience for real-time text analysis.
+The project features a modern, clean, and user-friendly desktop application interface built with **CustomTkinter** (Light Mode), ensuring a seamless user experience for real-time text analysis.
 
 ### 💻 Desktop Application Interface (Live Previews)
 
@@ -16,38 +16,33 @@ The project features a modern, clean, and user-friendly desktop application inte
 
 ---
 
-## 🧠 Core Architecture & Technical Depth
+## 🧠 Technical Architecture & Pipeline
 
-Instead of relying on a single classifier, this system utilizes a **Consensus-Based Voting Ensemble Layer** combining multiple optimized models:
-* **Logistic Regression** (Baseline text classification)
-* **Naive Bayes** (Highly efficient for text frequency probabilities)
-* **XGBoost** (Advanced gradient boosting for fine-grained feature splitting)
+Instead of relying on a single classifier, this system utilizes a **Soft-Voting Ensemble Layer** that combines the probability distributions of three foundational machine learning algorithms:
 
-### 📊 Model Development & Kaggle Notebook
-The complete development pipeline from Exploratory Data Analysis (EDA) to hyperparameter tuning and ensemble evaluation is fully documented. 
+1. **Logistic Regression:** Optimized with balanced class weights for strong text classification baselines.
+2. **Multinomial Naive Bayes:** Highly efficient for handling frequency-based text probabilities.
+3. **Support Vector Machine (SVC):** Tuned with probability outputs for drawing optimal hyperplanes in high-dimensional text space.
 
-⭐ **Check out the live development workspace and show support here:** [Spam Vs Ham on Kaggle](https://www.kaggle.com/code/mennaadel111/spam-vs-ham)
+### 📈 Model Development & Kaggle Success
+The complete pipeline—from Exploratory Data Analysis (EDA) to hyperparameter tuning—is fully documented and has already gained active engagement on Kaggle.
 
-### Key NLP Preprocessing Steps:
-1. **Text Cleansing:** Regex pattern matching to remove non-alphabetic characters and lowercasing.
-2. **Tokenization & Stopwords Removal:** Filtering out common English stopwords using **NLTK**.
-3. **Stemming:** Reducing words to their base form using the **PorterStemmer** algorithm.
-4. **Vectorization:** Transforming cleaned text into numerical features using **TF-IDF Vectorizer**.
+⭐ **Check out the live development workspace:** [Spam Vs Ham on Kaggle](https://www.kaggle.com/code/mennaadel111/spam-vs-ham)
+
+### Key NLP & Data Science Pipeline:
+* **Text Cleansing:** Regex pattern matching to extract alphabetic characters and lowercasing.
+* **Stopwords Filter & Stemming:** Filtering common English stopwords and applying word normalization using NLTK's **PorterStemmer**.
+* **Feature Extraction:** Advanced text vectorization using **TF-IDF Vectorizer** (with `ngram_range=(1, 2)` and `max_features=5000`).
+* **Class Balancing:** Applied **SMOTE** (Synthetic Minority Over-sampling Technique) to address the text label imbalance before training, significantly boosting recall for the minority class.
 
 ---
 
 ## 📁 Repository Structure
 
-* `GUI.py`: The core desktop application script with zero clutter.
-* `Spam Vs Ham.ipynb`: The complete development pipeline notebook.
-* `ensemble_voting_model.pkl`: The trained, ready-to-use Voting Classifier.
-* `tfidf_vectorizer.pkl`: The fitted TF-IDF vocabulary extractor.
-* `app_icon.ico`: Custom purple identity icon for the application window.
+* `GUI.py`: Complete desktop app implementation using CustomTkinter with integrated text placeholders and clipboard handlers.
+* `Spam Vs Ham.ipynb`: Complete Jupyter Notebook containing EDA, data handling, and evaluation code.
+* `ensemble_voting_model.pkl`: The trained, serialized soft-voting ensemble classifier.
+* `tfidf_vectorizer.pkl`: The fitted TF-IDF vocabulary state.
+* `app_icon.ico`: Custom branding identity icon for the application window.
 
 ---
-
-## 🛠️ How to Run Locally
-
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/MennaAdell/Email-Spam-Detector.git](https://github.com/MennaAdell/Email-Spam-Detector.git)
